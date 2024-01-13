@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="?attr/colorPrimaryDark">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                />
+
+            <ImageView
+                android:id="@+id/menubar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/baseline_apps_24"/>
+
+        </com.google.android.material.appbar.MaterialToolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/appbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/setImage"
+                android:layout_centerHorizontal="true">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgeCircle"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_launcher_background"
+                    app:civ_border_color="@color/black"
+                    app:civ_border_width="2dp" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/personalTextView"
+                android:layout_below="@id/setImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Personal Info"
+                android:textSize="20dp"
+                android:textColor="#767676"
+                android:padding="10dp"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider1"
+                android:layout_below="@id/personalTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_below="@+id/divider1"
+                android:id="@+id/fullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:hint="Full Name"
+                app:endIconMode="clear_text"
+                app:endIconCheckable="true"
+                app:helperText="Required*"
+                app:helperTextTextColor="#FF0000"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fullNameTextEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Full Name">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_below="@+id/fullName"
+                android:id="@+id/designation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:hint="Designation"
+                app:endIconMode="clear_text"
+                app:endIconCheckable="true"
+                app:helperText="Required*"
+                app:helperTextTextColor="#FF0000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/designationTextEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Designation">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_below="@id/designation"
+                android:id="@+id/company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:hint="Company"
+                app:endIconMode="clear_text"
+                app:endIconCheckable="true"
+                app:helperText="Required*"
+                app:helperTextTextColor="#FF0000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/companyTextEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Company">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/aboutMe"
+                android:layout_below="@+id/company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:hint="About Me"
+                android:gravity="top"
+                app:counterEnabled="true"
+                app:counterMaxLength="100"
+                app:endIconMode="clear_text"
+                app:endIconCheckable="true"
+                app:helperText="Required*"
+                app:helperTextTextColor="#FF0000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/aboutMeEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="start">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/ContactTextView"
+                android:layout_below="@id/aboutMe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Contact Info"
+                android:textSize="20dp"
+                android:textColor="#767676"
+                android:padding="10dp"/>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider2"
+                android:layout_below="@id/ContactTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_below="@id/divider2"
+                android:id="@+id/contactNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:hint="Contact Number"
+                app:endIconMode="clear_text"
+                app:endIconCheckable="true"
+                app:prefixText="+91"
+                app:helperText="Required*"
+                app:helperTextTextColor="#FF0000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/contactNumberTextEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Contact Number"
+                    android:inputType="number">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/number"
+                android:layout_below="@id/contactNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="This is a Whatsapp Number?"
+                android:textSize="16dp"
+                android:textColor="#767676"
+                android:padding="10dp"/>
+
+            <RadioGroup
+                android:id="@+id/dot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/number"
+                app:helperText="Required*"
+                app:helperTextTextColor="#FF0000">
+                <RadioButton
+                    android:id="@+id/yesButton"
+                    android:layout_width="wrap_content"
+                    android:checked="true"
+
+                    android:layout_height="wrap_content"
+                    android:text="Yes"/>
+
+                <RadioButton
+                    android:id="@+id/noButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No" />
+            </RadioGroup>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_below="@id/dot"
+                android:id="@+id/whatappNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:hint="Whatapp Number"
+                app:endIconMode="clear_text"
+                app:endIconCheckable="true"
+                app:prefixText="+91"
+                app:helperText="Required*"
+                app:helperTextTextColor="#FF0000"
+                android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/whatappNumberTextEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Whatapp Number"
+                    android:inputType="number">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_below="@id/whatappNumber"
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:hint="Email"
+                app:endIconMode="clear_text"
+                app:endIconCheckable="true"
+                app:helperText="Required*"
+                app:helperTextTextColor="#FF0000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailTextEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress">
+
+                </com.google.android.material.textfield.TextInputEditText>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_below="@id/email"
+                android:id="@+id/servicesInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:hint="Services Info"
+                app:counterEnabled="true"
+                app:counterMaxLength="100"
+                android:gravity="start"
+                app:endIconMode="clear_text"
+                app:endIconCheckable="true"
+                app:helperText="Required*"
+                app:helperTextTextColor="#FF0000">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/servicesInfoTextEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:gravity="start">
+
+                </com.google.android.material.textfield.TextInputEditText>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/nextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/servicesInfo"
+                android:text="Next"
+                android:layout_centerHorizontal="true"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
